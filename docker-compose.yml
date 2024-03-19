@@ -1,0 +1,15 @@
+version: '3'
+services:
+  web:
+    image: php:7.4-apache
+    ports:
+      - "8000:80"
+    volumes:
+      - ./backend:/var/www/html
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_DATABASE: blog
+    ports:
+      - "3306:3306"
